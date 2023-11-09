@@ -15,16 +15,16 @@ class PlannerController {
   async #inputVisitDay() {
     try {
       const visitDate = await InputView.readDate();
-      this.PLANNER_DATA.getDate(visitDate);
-      return this.#orderFood();
+      this.PLANNER_DATA.updateDate(visitDate);
+      return this.#orderMenu();
     } catch (error) {
       OutputView.printError(error.message);
       return this.#inputVisitDay();
     }
   }
 
-  async #orderFood() {
-    console.log('It order Food');
+  async #orderMenu() {
+    const foodAndAmount = await InputView.readMenu();
   }
 }
 

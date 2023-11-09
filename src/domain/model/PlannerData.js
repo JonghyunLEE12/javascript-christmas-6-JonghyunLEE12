@@ -5,8 +5,12 @@ class PlannerData {
     this.#date = date;
   }
 
-  getDate(inputDate) {
+  updateDate(inputDate) {
     this.#date = inputDate;
+    return this.#date;
+  }
+
+  getDate() {
     return this.#date;
   }
 }

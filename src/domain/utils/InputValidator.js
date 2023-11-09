@@ -24,6 +24,10 @@ class InputValidator {
       throw new Error(ERROR_MSG.dateError);
     }
   }
+
+  async menuValidate(menu) {
+    console.log(menu);
+  }
 }
 
 export default InputValidator;

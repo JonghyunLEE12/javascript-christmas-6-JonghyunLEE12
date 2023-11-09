@@ -10,6 +10,11 @@ const InputView = {
     await this.INPUT_VAL.dateValidate(Number(userDate));
     return userDate;
   },
+
+  async readMenu() {
+    const userMenu = await Console.readLineAsync(INPUT_MSG.orderMenu);
+    await this.INPUT_VAL.menuValidate(userMenu.split(','));
+  },
 };
 
 export default InputView;

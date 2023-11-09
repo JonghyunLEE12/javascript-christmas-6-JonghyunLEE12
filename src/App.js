@@ -1,5 +1,15 @@
+import PlannerController from './domain/controller/PlannerController.js';
+
 class App {
-  async run() {}
+  #PLANNER;
+
+  constructor() {
+    this.#PLANNER = new PlannerController();
+  }
+
+  async run() {
+    await this.#PLANNER.plannerStart();
+  }
 }
 
 export default App;

@@ -9,11 +9,22 @@ class PlannerController {
 
   async plannerStart() {
     OutputView.printWelcome();
-    await this.inputVisitDay();
+    await this.#inputVisitDay();
   }
 
-  async inputVisitDay() {
-    await InputView.readDate();
+  async #inputVisitDay() {
+    try {
+      const visitDate = await InputView.readDate();
+      this.PLANNER_DATA.getDate(visitDate);
+      return this.#orderFood();
+    } catch (error) {
+      OutputView.printError(error.message);
+      return this.#inputVisitDay();
+    }
+  }
+
+  async #orderFood() {
+    console.log('It order Food');
   }
 }
 

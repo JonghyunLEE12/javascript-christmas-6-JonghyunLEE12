@@ -24,7 +24,11 @@ class PlannerController {
   }
 
   async #orderMenu() {
-    const foodAndAmount = await InputView.readMenu();
+    try {
+      const foodAndAmount = await InputView.readMenu();
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
 

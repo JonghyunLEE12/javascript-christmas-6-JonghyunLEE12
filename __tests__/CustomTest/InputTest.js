@@ -28,6 +28,7 @@ describe('메뉴 테스트', () => {
     { menu: ['김밥-1', '떡볶이-1'], expectedError: '[ERROR]' },
     { menu: ['제로콜라-일', '레드와인-이'], expectedError: '[ERROR]' },
     { menu: ['제로콜라-a', '레드와인-b'], expectedError: '[ERROR]' },
+    { menu: ['해산물파스타-2', '해산물파스타-1'], expectedError: '[ERROR]' },
   ];
 
   testCases.forEach((testCase) => {

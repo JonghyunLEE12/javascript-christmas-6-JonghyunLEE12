@@ -68,9 +68,14 @@ class MenuValidate {
   }
 
   duplicateCheck() {
-    if (this.#menu.length !== new Set(this.#menu).size) {
+    const menuName = this.#getMenuName();
+    if (menuName.length !== new Set(menuName).size) {
       throw new Error(ERROR_MSG.notInMenu);
     }
+  }
+
+  #getMenuName() {
+    return this.#menu.map((order) => order.split('-')[0]);
   }
 }
 

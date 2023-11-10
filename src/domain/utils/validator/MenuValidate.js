@@ -66,6 +66,12 @@ class MenuValidate {
       throw new Error(ERROR_MSG.notInMenu);
     }
   }
+
+  duplicateCheck() {
+    if (this.#menu.length !== new Set(this.#menu).size) {
+      throw new Error(ERROR_MSG.notInMenu);
+    }
+  }
 }
 
 export default MenuValidate;

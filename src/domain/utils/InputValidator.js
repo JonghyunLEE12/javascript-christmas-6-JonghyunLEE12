@@ -20,6 +20,7 @@ class InputValidator {
     menuValidator.menuCheck();
     menuValidator.menuAmountCheck(this.#REGAX);
     menuValidator.formCheck();
+    menuValidator.duplicateCheck();
   }
 }
 

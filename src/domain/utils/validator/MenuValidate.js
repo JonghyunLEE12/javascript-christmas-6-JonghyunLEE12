@@ -38,9 +38,13 @@ class MenuValidate {
   }
 
   menuAmountCheck(regax) {
-    this.#menu.forEach((order) =>
-      this.#amountCheck(order.split('-')[1], regax),
-    );
+    const totalMenuAmount = [];
+    this.#menu.forEach((order) => {
+      this.#amountCheck(order.split('-')[1], regax);
+      totalMenuAmount.push(Number(order.split('-')[1]));
+    });
+
+    this.#totalAmountCheck(totalMenuAmount);
   }
 
   #amountCheck(amount, regax) {
@@ -53,6 +57,13 @@ class MenuValidate {
 
     if (!Number.isSafeInteger(Number(amount))) {
       throw new Error(ERROR_MSG.notInMenu);
+    }
+  }
+
+  #totalAmountCheck(total) {
+    const checkTotal = total.reduce((sum, amount) => sum + amount);
+    if (checkTotal > 20) {
+      throw new Error(ERROR_MSG.totalError);
     }
   }
 

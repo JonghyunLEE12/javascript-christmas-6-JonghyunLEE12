@@ -68,14 +68,46 @@ class MenuValidate {
   }
 
   duplicateCheck() {
-    const menuName = this.#getMenuName();
-    if (menuName.length !== new Set(menuName).size) {
+    if (this.#userMenu.length !== new Set(this.#userMenu).size) {
       throw new Error(ERROR_MSG.notInMenu);
     }
   }
 
-  #getMenuName() {
-    return this.#menu.map((order) => order.split('-')[0]);
+  drinkCheck() {
+    const menuObject = this.#makingMenuObject();
+    if (this.#objectCheck(menuObject)) {
+      throw new Error(ERROR_MSG.drinkError);
+    }
+  }
+
+  #makingMenuObject() {
+    const menuObject = {};
+    Object.keys(FOOD_MENU).forEach((course) => {
+      menuObject[course] = this.#userMenuCourses(course);
+    });
+    return menuObject;
+  }
+
+  #userMenuCourses(course) {
+    const includeCourse = [];
+    Object.values(FOOD_MENU[course]).forEach((eachMenu) => {
+      if (this.#menuIncludes(eachMenu)) {
+        includeCourse.push(eachMenu[0]);
+      }
+    });
+    return includeCourse.length;
+  }
+
+  #menuIncludes(eachMenu) {
+    return this.#userMenu.includes(eachMenu[0]);
+  }
+
+  #objectCheck(menuObject) {
+    const { appetizer, main, dessert, drink } = menuObject;
+    if (appetizer === 0 && main === 0 && dessert === 0 && drink !== 0) {
+      return true;
+    }
+    return false;
   }
 }
 

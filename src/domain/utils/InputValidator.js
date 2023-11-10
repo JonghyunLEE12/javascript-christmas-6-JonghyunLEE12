@@ -21,6 +21,7 @@ class InputValidator {
     menuValidator.menuAmountCheck(this.#REGAX);
     menuValidator.formCheck();
     menuValidator.duplicateCheck();
+    menuValidator.drinkCheck();
   }
 }
 

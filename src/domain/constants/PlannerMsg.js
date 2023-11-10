@@ -1,5 +1,8 @@
 export const STATUS_MSG = {
   welcomeMsg: '안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.',
+  showPlanner: (date) =>
+    `12월 ${date}일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n`,
+  orderMenu: '<주문 메뉴>',
 };
 
 export const INPUT_MSG = {
@@ -15,4 +18,8 @@ export const ERROR_MSG = {
   drinkError: '[ERROR] 음료만 주문할 수 없습니다. 다시 입력해 주세요.',
   totalError:
     '[ERROR] 음식은 최대 20개 까지만 주문 가능합니다. 다시 입력해주세요',
+};
+
+export const OUTPUT_MSG = {
+  userOrder: (order) => `${order[0]} ${order[1]}개`,
 };

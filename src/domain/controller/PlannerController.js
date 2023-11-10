@@ -1,6 +1,7 @@
 import OutputView from '../views/OutputView.js';
 import InputView from '../views/InputView.js';
 import PlannerData from '../model/PlannerData.js';
+import { STATUS_MSG } from '../constants/PlannerMsg.js';
 
 class PlannerController {
   constructor() {
@@ -8,7 +9,7 @@ class PlannerController {
   }
 
   async plannerStart() {
-    OutputView.printWelcome();
+    OutputView.printStatusMsg(STATUS_MSG.welcomeMsg);
     await this.#inputVisitDay();
   }
 
@@ -34,8 +35,16 @@ class PlannerController {
     }
   }
 
-  async #showPlanner() {
-    console.log(this.PLANNER_DATA.getUserOrder());
+  #showPlanner() {
+    OutputView.printStatusMsg(
+      STATUS_MSG.showPlanner(this.PLANNER_DATA.getDate()),
+    );
+    this.#showOrderMenu();
+  }
+
+  #showOrderMenu() {
+    OutputView.printStatusMsg(STATUS_MSG.orderMenu);
+    OutputView.printOrderMenu(this.PLANNER_DATA.getUserOrder());
   }
 }
 

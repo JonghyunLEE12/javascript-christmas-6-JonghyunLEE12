@@ -2,31 +2,35 @@
 import InputValidator from '../../src/domain/utils/InputValidator.js';
 
 describe('날짜 테스트', () => {
-  test('날짜 범위 입력 에러', async () => {
-    const userInput = new InputValidator();
+  const userInput = new InputValidator();
+  const testCases = [
+    { date: 'a', expectedError: '[ERROR]' },
+    { date: 32, expectedError: '[ERROR]' },
+  ];
 
-    await expect(userInput.dateValidate(32)).rejects.toThrow('[ERROR]');
-  });
-
-  test('날짜 범위 입력 에러', async () => {
-    const userInput = new InputValidator();
-
-    await expect(userInput.dateValidate('a')).rejects.toThrow('[ERROR]');
+  testCases.forEach((testCase) => {
+    test(`날짜 테스트, 날짜: ${testCase.date}`, async () => {
+      await expect(userInput.dateValidate(testCase.date)).rejects.toThrow(
+        testCases.expectedError,
+      );
+    });
   });
 });
 
 describe('메뉴 테스트', () => {
-  test('메뉴 테스트, 메뉴판에 없는 메뉴', async () => {
-    const menuValidate = new InputValidator();
-    const menu = ['짬뽕-1'];
+  const menuValidate = new InputValidator();
+  const testCases = [
+    { menu: ['짬뽕-1'], expectedError: '[ERROR]' },
+    { menu: ['티본스테이크-0'], expectedError: '[ERROR]' },
+    { menu: ['티본스테이크-1.5'], expectedError: '[ERROR]' },
+    { menu: ['티본스테이크-a'], expectedError: '[ERROR]' },
+  ];
 
-    await expect(menuValidate.menuValidate(menu)).rejects.toThrow('[ERROR]');
-  });
-
-  test('메뉴 테스트, 메뉴의 개수는 1이상의 숫자', async () => {
-    const menuValidate = new InputValidator();
-    const menu = ['티본스테이크-0'];
-
-    await expect(menuValidate.menuValidate(menu)).rejects.toThrow('[ERROR');
+  testCases.forEach((testCase) => {
+    test(`메뉴 테스트, 메뉴: ${testCase.menu}`, async () => {
+      await expect(menuValidate.menuValidate(testCase.menu)).rejects.toThrow(
+        testCase.expectedError,
+      );
+    });
   });
 });

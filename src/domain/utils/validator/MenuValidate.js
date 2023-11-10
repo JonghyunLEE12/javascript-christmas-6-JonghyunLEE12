@@ -50,6 +50,10 @@ class MenuValidate {
     if (Number(amount) <= 0) {
       throw new Error(ERROR_MSG.notInMenu);
     }
+
+    if (!Number.isSafeInteger(Number(amount))) {
+      throw new Error(ERROR_MSG.notInMenu);
+    }
   }
 }
 

@@ -16,6 +16,12 @@ class DateValidate {
     }
   }
 
+  safeCheck() {
+    if (!Number.isSafeInteger(this.#date)) {
+      throw new Error(ERROR_MSG.dateError);
+    }
+  }
+
   rangeCheck() {
     if (this.#date <= 0 || this.#date > 31) {
       throw new Error(ERROR_MSG.dateError);

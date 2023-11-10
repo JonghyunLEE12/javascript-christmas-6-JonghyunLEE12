@@ -13,6 +13,7 @@ class InputValidator {
   async dateValidate(date) {
     const dateValidator = new DateValidate(this.#REGAX, date);
     dateValidator.regaxCheck();
+    dateValidator.safeCheck();
     dateValidator.rangeCheck();
   }
 

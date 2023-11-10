@@ -24,6 +24,10 @@ describe('메뉴 테스트', () => {
     { menu: ['티본스테이크-0'], expectedError: '[ERROR]' },
     { menu: ['티본스테이크-1.5'], expectedError: '[ERROR]' },
     { menu: ['티본스테이크-a'], expectedError: '[ERROR]' },
+    { menu: ['제로콜라1', '레드와인1'], expectedError: '[ERROR]' },
+    { menu: ['김밥-1', '떡볶이-1'], expectedError: '[ERROR]' },
+    { menu: ['제로콜라-일', '레드와인-이'], expectedError: '[ERROR]' },
+    { menu: ['제로콜라-a', '레드와인-b'], expectedError: '[ERROR]' },
   ];
 
   testCases.forEach((testCase) => {

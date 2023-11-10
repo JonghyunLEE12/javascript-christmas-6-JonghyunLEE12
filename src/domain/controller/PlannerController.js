@@ -26,9 +26,16 @@ class PlannerController {
   async #orderMenu() {
     try {
       const foodAndAmount = await InputView.readMenu();
+      this.PLANNER_DATA.updateFood(foodAndAmount);
+      return this.#showPlanner();
     } catch (error) {
-      console.log(error);
+      OutputView.printError(error.message);
+      return this.#orderMenu();
     }
+  }
+
+  async #showPlanner() {
+    console.log(this.PLANNER_DATA.getUserOrder());
   }
 }
 

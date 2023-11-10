@@ -1,17 +1,27 @@
 class PlannerData {
   #date;
 
-  constructor(date = 0) {
+  #userOrder;
+
+  constructor(date = 0, userOrder = []) {
     this.#date = date;
+    this.#userOrder = userOrder;
   }
 
   updateDate(inputDate) {
     this.#date = inputDate;
-    return this.#date;
   }
 
   getDate() {
     return this.#date;
+  }
+
+  updateFood(inputOrder) {
+    this.#userOrder = inputOrder;
+  }
+
+  getUserOrder() {
+    return this.#userOrder;
   }
 }
 

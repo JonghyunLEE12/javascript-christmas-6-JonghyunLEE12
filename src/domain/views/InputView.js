@@ -14,6 +14,7 @@ const InputView = {
   async readMenu() {
     const userMenu = await Console.readLineAsync(INPUT_MSG.orderMenu);
     await this.INPUT_VAL.menuValidate(userMenu.split(','));
+    return userMenu.split(',');
   },
 };
 

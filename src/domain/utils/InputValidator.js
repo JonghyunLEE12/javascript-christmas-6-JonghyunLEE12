@@ -17,9 +17,9 @@ class InputValidator {
   }
 
   async menuValidate(menu) {
-    // MenuValidate.menuCheck(menu);
     const menuValidator = new MenuValidate(menu);
-    menuValidator.menuCheck(menu);
+    menuValidator.menuCheck();
+    menuValidator.menuAmountCheck(this.#REGAX);
   }
 }
 

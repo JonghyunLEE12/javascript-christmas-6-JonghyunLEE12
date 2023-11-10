@@ -16,10 +16,17 @@ describe('날짜 테스트', () => {
 });
 
 describe('메뉴 테스트', () => {
-  test('메뉴 테스트', async () => {
+  test('메뉴 테스트, 메뉴판에 없는 메뉴', async () => {
     const menuValidate = new InputValidator();
     const menu = ['짬뽕-1'];
 
     await expect(menuValidate.menuValidate(menu)).rejects.toThrow('[ERROR]');
+  });
+
+  test('메뉴 테스트, 메뉴의 개수는 1이상의 숫자', async () => {
+    const menuValidate = new InputValidator();
+    const menu = ['티본스테이크-0'];
+
+    await expect(menuValidate.menuValidate(menu)).rejects.toThrow('[ERROR');
   });
 });

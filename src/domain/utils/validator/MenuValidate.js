@@ -36,6 +36,21 @@ class MenuValidate {
       this.#canOrder.push(food[0]),
     );
   }
+
+  menuAmountCheck(regax) {
+    this.#menu.forEach((order) =>
+      this.#amountCheck(order.split('-')[1], regax),
+    );
+  }
+
+  #amountCheck(amount, regax) {
+    if (regax.test(Number(amount))) {
+      throw new Error(ERROR_MSG.notInMenu);
+    }
+    if (Number(amount) <= 0) {
+      throw new Error(ERROR_MSG.notInMenu);
+    }
+  }
 }
 
 export default MenuValidate;

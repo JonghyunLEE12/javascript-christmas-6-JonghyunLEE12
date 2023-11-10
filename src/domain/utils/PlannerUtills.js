@@ -1,10 +1,14 @@
 import { FOOD_MENU } from '../constants/FoodMenu.js';
+import { EVENT_CONST } from '../constants/Constants.js';
 
 class PlannerUtils {
   #userOrder;
 
-  constructor(userOrder) {
+  #userDate;
+
+  constructor(userOrder = [], userDate = 0) {
     this.#userOrder = userOrder;
+    this.#userDate = userDate;
   }
 
   getTotalAmount() {
@@ -24,6 +28,19 @@ class PlannerUtils {
       totalAmount.push(MENU_COST[menu] * Number(cost));
     });
     return totalAmount.reduce((total, cost) => total + cost);
+  }
+
+  benefitCheck() {
+    EVENT_CONST.christmas = this.#christmasCheck();
+    return EVENT_CONST;
+  }
+
+  #christmasCheck() {
+    if (this.#userDate > 25) {
+      return 0;
+    }
+    const benefit = 1000 + (this.#userDate - 1) * 100;
+    return benefit;
   }
 }
 

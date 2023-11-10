@@ -18,3 +18,24 @@ describe('유틸 테스트', () => {
     });
   });
 });
+
+describe('유틸 테스트', () => {
+  const expectedObj = {
+    christmas: 3400,
+    weekDay: 0,
+    weenkendDay: 0,
+    speacialDay: 0,
+    benefitEvent: 0,
+  };
+  const testCases = [
+    { menu: ['티본스테이크-5'], date: '25', expected: expectedObj },
+  ];
+
+  testCases.forEach((testCase) => {
+    test(`총 금액 테스트 : ${testCase.date}`, async () => {
+      //
+      const plannerUtil = new PlannerUtils(testCase.menu, testCase.date);
+      await expect(plannerUtil.benefitCheck()).toStrictEqual(testCase.expected);
+    });
+  });
+});

@@ -54,6 +54,12 @@ class PlannerController {
     const plannerUtill = new PlannerUtills(this.PLANNER_DATA.getUserOrder());
     this.PLANNER_DATA.updateTotalAmount(plannerUtill.getTotalAmount());
     OutputView.printTotalAmount(this.PLANNER_DATA.getTotalAmount());
+    this.#giftCheck();
+  }
+
+  #giftCheck() {
+    OutputView.printStatusMsg(STATUS_MSG.giftMenu);
+    OutputView.printGift(this.PLANNER_DATA.getTotalAmount());
   }
 }
 

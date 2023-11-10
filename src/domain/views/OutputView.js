@@ -20,6 +20,10 @@ const OutputView = {
   printTotalAmount(totalAmount) {
     Console.print(OUTPUT_MSG.totalAmount(totalAmount));
   },
+
+  printGift(amount) {
+    Console.print(OUTPUT_MSG.giftMenu(amount));
+  },
 };
 
 export default OutputView;

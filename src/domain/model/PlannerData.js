@@ -3,9 +3,12 @@ class PlannerData {
 
   #userOrder;
 
-  constructor(date = 0, userOrder = []) {
+  #totalAmount;
+
+  constructor(date = 0, userOrder = [], totalAmount = 0) {
     this.#date = date;
     this.#userOrder = userOrder;
+    this.#totalAmount = totalAmount;
   }
 
   updateDate(inputDate) {
@@ -22,6 +25,14 @@ class PlannerData {
 
   getUserOrder() {
     return this.#userOrder;
+  }
+
+  updateTotalAmount(totalAmount) {
+    this.#totalAmount = totalAmount;
+  }
+
+  getTotalAmount() {
+    return this.#totalAmount;
   }
 }
 

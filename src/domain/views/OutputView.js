@@ -16,6 +16,10 @@ const OutputView = {
       Console.print(OUTPUT_MSG.userOrder(order));
     });
   },
+
+  printTotalAmount(totalAmount) {
+    Console.print(OUTPUT_MSG.totalAmount(totalAmount));
+  },
 };
 
 export default OutputView;

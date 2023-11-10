@@ -3,6 +3,7 @@ export const STATUS_MSG = {
   showPlanner: (date) =>
     `12월 ${date}일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n`,
   orderMenu: '<주문 메뉴>',
+  totalAmount: '\n<할인 전 총주문 금액>',
 };
 
 export const INPUT_MSG = {
@@ -22,4 +23,5 @@ export const ERROR_MSG = {
 
 export const OUTPUT_MSG = {
   userOrder: (order) => `${order[0]} ${order[1]}개`,
+  totalAmount: (amount) => `${amount.toLocaleString()}원`,
 };

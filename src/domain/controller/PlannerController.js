@@ -1,6 +1,7 @@
 import OutputView from '../views/OutputView.js';
 import InputView from '../views/InputView.js';
 import PlannerData from '../model/PlannerData.js';
+import PlannerUtills from '../utils/PlannerUtills.js';
 import { STATUS_MSG } from '../constants/PlannerMsg.js';
 
 class PlannerController {
@@ -45,6 +46,14 @@ class PlannerController {
   #showOrderMenu() {
     OutputView.printStatusMsg(STATUS_MSG.orderMenu);
     OutputView.printOrderMenu(this.PLANNER_DATA.getUserOrder());
+    this.#totalOrderAmount();
+  }
+
+  #totalOrderAmount() {
+    OutputView.printStatusMsg(STATUS_MSG.totalAmount);
+    const plannerUtill = new PlannerUtills(this.PLANNER_DATA.getUserOrder());
+    this.PLANNER_DATA.updateTotalAmount(plannerUtill.getTotalAmount());
+    OutputView.printTotalAmount(this.PLANNER_DATA.getTotalAmount());
   }
 }
 

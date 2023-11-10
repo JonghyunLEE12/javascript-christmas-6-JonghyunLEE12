@@ -1,5 +1,3 @@
-// import { DateValidate } from './validator/dateValidate.js';
-// import { MenuValidate } from './validator/MenuValidate.js';
 import DateValidate from './validator/DateValidate.js';
 import MenuValidate from './validator/MenuValidate.js';
 
@@ -21,6 +19,7 @@ class InputValidator {
     const menuValidator = new MenuValidate(menu);
     menuValidator.menuCheck();
     menuValidator.menuAmountCheck(this.#REGAX);
+    menuValidator.formCheck();
   }
 }
 

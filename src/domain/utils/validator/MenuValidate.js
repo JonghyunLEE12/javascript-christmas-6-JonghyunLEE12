@@ -55,6 +55,17 @@ class MenuValidate {
       throw new Error(ERROR_MSG.notInMenu);
     }
   }
+
+  formCheck() {
+    const form = /^[가-힣]+-[0-9]+$/;
+    this.#menu.forEach((order) => this.#formRegaxCheck(order, form));
+  }
+
+  #formRegaxCheck(order, form) {
+    if (!form.test(order)) {
+      throw new Error(ERROR_MSG.notInMenu);
+    }
+  }
 }
 
 export default MenuValidate;

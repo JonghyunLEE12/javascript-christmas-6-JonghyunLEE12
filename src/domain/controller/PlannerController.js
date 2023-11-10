@@ -1,7 +1,7 @@
 import OutputView from '../views/OutputView.js';
 import InputView from '../views/InputView.js';
 import PlannerData from '../model/PlannerData.js';
-import PlannerUtills from '../utils/PlannerUtills.js';
+import PlannerUtils from '../utils/PlannerUtills.js';
 import { STATUS_MSG } from '../constants/PlannerMsg.js';
 
 class PlannerController {
@@ -51,7 +51,8 @@ class PlannerController {
 
   #totalOrderAmount() {
     OutputView.printStatusMsg(STATUS_MSG.totalAmount);
-    const plannerUtill = new PlannerUtills(this.PLANNER_DATA.getUserOrder());
+    const plannerUtill = new PlannerUtils(this.PLANNER_DATA.getUserOrder());
+    plannerUtill.getTotalAmount();
     this.PLANNER_DATA.updateTotalAmount(plannerUtill.getTotalAmount());
     OutputView.printTotalAmount(this.PLANNER_DATA.getTotalAmount());
     this.#giftCheck();
@@ -60,6 +61,14 @@ class PlannerController {
   #giftCheck() {
     OutputView.printStatusMsg(STATUS_MSG.giftMenu);
     OutputView.printGift(this.PLANNER_DATA.getTotalAmount());
+    this.#benefitCheck();
+  }
+
+  #benefitCheck() {
+    OutputView.printStatusMsg(STATUS_MSG.userBenefit);
+    // const plannerUtill = new PlannerUtils(
+    //   (userDate = this.PLANNER_DATA.getDate()),
+    // );
   }
 }
 

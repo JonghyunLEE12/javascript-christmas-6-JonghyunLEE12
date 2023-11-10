@@ -5,6 +5,7 @@ export const STATUS_MSG = {
   orderMenu: '<주문 메뉴>',
   totalAmount: '\n<할인 전 총주문 금액>',
   giftMenu: `\n<증정 메뉴>`,
+  userBenefit: `\n<혜택 내역>`,
 };
 
 export const INPUT_MSG = {

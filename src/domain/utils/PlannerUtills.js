@@ -1,5 +1,5 @@
 import { FOOD_MENU } from '../constants/FoodMenu.js';
-import { EVENT_CONST } from '../constants/Constants.js';
+import { EVENT_CONST, DAY_OF_WEEK } from '../constants/Constants.js';
 
 class PlannerUtils {
   #userOrder;
@@ -32,6 +32,7 @@ class PlannerUtils {
 
   benefitCheck() {
     EVENT_CONST.christmas = this.#christmasCheck();
+    EVENT_CONST.weekDay = this.#weekDaysCheck();
     return EVENT_CONST;
   }
 
@@ -41,6 +42,29 @@ class PlannerUtils {
     }
     const benefit = 1000 + (this.#userDate - 1) * 100;
     return benefit;
+  }
+
+  #weekDaysCheck() {
+    const DATE = `2023-12-${this.#userDate}`;
+    const USER_DAY = new Date(DATE).getDay();
+    if (DAY_OF_WEEK.weekDay.includes(USER_DAY)) {
+      return this.#checkDessertMenu() * 2023;
+    }
+    return 0;
+  }
+
+  #checkDessertMenu() {
+    const numberOfDessert = [0];
+    const userMenu = this.#userOrder.map((order) => order.split('-'));
+    const dessertMenu = Object.values(FOOD_MENU.dessert).map(
+      (dessert) => dessert[0],
+    );
+    userMenu.forEach((menu) => {
+      if (dessertMenu.includes(menu[0])) {
+        numberOfDessert.push(Number(menu[1]));
+      }
+    });
+    return numberOfDessert.reduce((total, amount) => total + amount);
   }
 }
 

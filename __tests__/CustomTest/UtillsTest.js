@@ -37,7 +37,7 @@ describe('유틸 테스트', () => {
   ];
 
   testCases.forEach((testCase) => {
-    test(`총 금액 테스트 : ${testCase.date}`, async () => {
+    test(`총 금액 테스트 : ${testCase.date}일`, async () => {
       //
       const plannerUtil = new PlannerUtils(testCase.menu, testCase.date);
       await expect(plannerUtil.benefitCheck()).toStrictEqual(testCase.expected);

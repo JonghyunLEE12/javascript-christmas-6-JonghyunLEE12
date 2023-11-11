@@ -37,6 +37,7 @@ class PlannerUtils {
     EVENT_CONST.christmas = this.#christmasCheck();
     EVENT_CONST.weekDay = this.#weekDaysCheck();
     EVENT_CONST.weekendDay = this.#weekendDayCheck();
+    EVENT_CONST.specialDay = this.#specialDayCheck();
     console.log(EVENT_CONST);
     return EVENT_CONST;
   }
@@ -59,6 +60,16 @@ class PlannerUtils {
   #weekendDayCheck() {
     if (DAY_OF_WEEK.weekendDay.includes(this.#userDay)) {
       return this.#checkEventMenu('main') * 2023;
+    }
+    return 0;
+  }
+
+  #specialDayCheck() {
+    if (DAY_OF_WEEK.specialDay.includes(this.#userDay)) {
+      return 1000;
+    }
+    if (DAY_OF_WEEK.specialDay.includes(Number(this.#userDate))) {
+      return 1000;
     }
     return 0;
   }

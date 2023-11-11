@@ -15,5 +15,5 @@ export const DAY_OF_WEEK = {
   fri: 5,
   sat: 6,
   weekDay: [0, 1, 2, 3, 4],
-  weekend: [5, 6],
+  weekendDay: [5, 6],
 };

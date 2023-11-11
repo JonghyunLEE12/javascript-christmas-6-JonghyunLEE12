@@ -66,11 +66,13 @@ class PlannerController {
 
   #benefitCheck() {
     OutputView.printStatusMsg(STATUS_MSG.userBenefit);
-    const plannerUtils = new PlannerUtils(
-      this.PLANNER_DATA.getUserOrder(),
-      this.PLANNER_DATA.getDate(),
-    );
-    plannerUtils.benefitCheck();
+    if (this.PLANNER_DATA.getTotalAmount() >= 10000) {
+      const plannerUtils = new PlannerUtils(
+        this.PLANNER_DATA.getUserOrder(),
+        this.PLANNER_DATA.getDate(),
+      );
+      plannerUtils.benefitCheck();
+    }
   }
 }
 

@@ -6,9 +6,12 @@ class PlannerUtils {
 
   #userDate;
 
+  #userDay;
+
   constructor(userOrder = [], userDate = 0) {
     this.#userOrder = userOrder;
     this.#userDate = userDate;
+    this.#userDay = new Date(`2023-12-${this.#userDate}`).getDay();
   }
 
   getTotalAmount() {
@@ -33,6 +36,8 @@ class PlannerUtils {
   benefitCheck() {
     EVENT_CONST.christmas = this.#christmasCheck();
     EVENT_CONST.weekDay = this.#weekDaysCheck();
+    EVENT_CONST.weekendDay = this.#weekendDayCheck();
+    console.log(EVENT_CONST);
     return EVENT_CONST;
   }
 
@@ -45,26 +50,29 @@ class PlannerUtils {
   }
 
   #weekDaysCheck() {
-    const DATE = `2023-12-${this.#userDate}`;
-    const USER_DAY = new Date(DATE).getDay();
-    if (DAY_OF_WEEK.weekDay.includes(USER_DAY)) {
-      return this.#checkDessertMenu() * 2023;
+    if (DAY_OF_WEEK.weekDay.includes(this.#userDay)) {
+      return this.#checkEventMenu('dessert') * 2023;
     }
     return 0;
   }
 
-  #checkDessertMenu() {
-    const numberOfDessert = [0];
+  #weekendDayCheck() {
+    if (DAY_OF_WEEK.weekendDay.includes(this.#userDay)) {
+      return this.#checkEventMenu('main') * 2023;
+    }
+    return 0;
+  }
+
+  #checkEventMenu(event) {
+    const numberOfMenu = [0];
     const userMenu = this.#userOrder.map((order) => order.split('-'));
-    const dessertMenu = Object.values(FOOD_MENU.dessert).map(
-      (dessert) => dessert[0],
-    );
+    const eventMenu = Object.values(FOOD_MENU[event]).map((menu) => menu[0]);
     userMenu.forEach((menu) => {
-      if (dessertMenu.includes(menu[0])) {
-        numberOfDessert.push(Number(menu[1]));
+      if (eventMenu.includes(menu[0])) {
+        numberOfMenu.push(Number(menu[1]));
       }
     });
-    return numberOfDessert.reduce((total, amount) => total + amount);
+    return numberOfMenu.reduce((total, amount) => total + amount);
   }
 }
 

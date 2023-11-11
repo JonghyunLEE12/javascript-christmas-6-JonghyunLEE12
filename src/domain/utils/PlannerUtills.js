@@ -8,10 +8,13 @@ class PlannerUtils {
 
   #userDay;
 
+  #userEvent;
+
   constructor(userOrder = [], userDate = 0) {
     this.#userOrder = userOrder;
     this.#userDate = userDate;
     this.#userDay = new Date(`2023-12-${this.#userDate}`).getDay();
+    this.#userEvent = { ...EVENT_CONST };
   }
 
   getTotalAmount() {
@@ -34,12 +37,14 @@ class PlannerUtils {
   }
 
   benefitCheck() {
-    EVENT_CONST.christmas = this.#christmasCheck();
-    EVENT_CONST.weekDay = this.#weekDaysCheck();
-    EVENT_CONST.weekendDay = this.#weekendDayCheck();
-    EVENT_CONST.specialDay = this.#specialDayCheck();
-    EVENT_CONST.benefitEvent = this.#benefitCheck();
-    return EVENT_CONST;
+    if (this.getTotalAmount() >= 10000) {
+      this.#userEvent.christmas = this.#christmasCheck();
+      this.#userEvent.weekDay = this.#weekDaysCheck();
+      this.#userEvent.weekendDay = this.#weekendDayCheck();
+      this.#userEvent.specialDay = this.#specialDayCheck();
+      this.#userEvent.benefitEvent = this.#benefitCheck();
+    }
+    return this.#userEvent;
   }
 
   #christmasCheck() {

@@ -11,8 +11,8 @@ export const STATUS_MSG = {
 export const EVENT = {
   christmas: '크리스마스 디데이 할인:',
   weekDay: '평일 할인:',
-  weenkendDay: '주말 할인:',
-  speacialDay: '특별 할인:',
+  weekendDay: '주말 할인:',
+  specialDay: '특별 할인:',
   benefitEvent: '증정 이벤트:',
 };
 
@@ -35,4 +35,15 @@ export const OUTPUT_MSG = {
   userOrder: (order) => `${order[0]} ${order[1]}개`,
   totalAmount: (amount) => `${amount.toLocaleString()}원`,
   giftMenu: (amount) => (amount >= 120000 ? '샴페인 1개' : '없음'),
+  noBenefit: '없음',
+  userBenefit: (event) => {
+    const eventMessage = {
+      christmas: `${EVENT.christmas} -${event[1].toLocaleString()}원`,
+      weekDay: `${EVENT.weekDay} -${event[1].toLocaleString()}원`,
+      weekendDay: `${EVENT.weekendDay} -${event[1].toLocaleString()}원`,
+      specialDay: `${EVENT.specialDay} -${event[1].toLocaleString()}원`,
+      benefitEvent: `${EVENT.benefitEvent} -${event[1].toLocaleString()}원`,
+    };
+    return eventMessage[event[0]];
+  },
 };

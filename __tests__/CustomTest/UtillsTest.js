@@ -25,7 +25,7 @@ describe('유틸 테스트', () => {
     weekDay: 4046,
     weekendDay: 0,
     specialDay: 1000,
-    benefitEvent: 2500,
+    benefitEvent: 25000,
   };
 
   const testCases = [

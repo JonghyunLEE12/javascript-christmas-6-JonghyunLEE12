@@ -24,6 +24,19 @@ const OutputView = {
   printGift(amount) {
     Console.print(OUTPUT_MSG.giftMenu(amount));
   },
+
+  printBenefits(benefit) {
+    const userBenefits = Object.entries(benefit).filter(
+      (event) => event[1] !== 0,
+    );
+    if (userBenefits.length === 0) {
+      Console.print(OUTPUT_MSG.noBenefit);
+      return;
+    }
+    userBenefits.forEach((event) => {
+      Console.print(OUTPUT_MSG.userBenefit(event));
+    });
+  },
 };
 
 export default OutputView;

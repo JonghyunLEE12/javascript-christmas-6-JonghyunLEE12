@@ -70,11 +70,16 @@ class PlannerController {
       this.PLANNER_DATA.getUserOrder(),
       this.PLANNER_DATA.getDate(),
     );
-    this.#showBenefits(plannerUtils.benefitCheck());
+    this.#showBenefits(plannerUtils.benefitCheck(), plannerUtils);
   }
 
-  #showBenefits(benefitObject) {
+  #showBenefits(benefitObject, plannerUtils) {
     OutputView.printBenefits(benefitObject);
+    this.#showTotalBenefit(plannerUtils);
+  }
+
+  #showTotalBenefit(plannerUtils) {
+    plannerUtils.calcBenefitAmount();
   }
 }
 

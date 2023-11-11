@@ -97,6 +97,10 @@ class PlannerUtils {
     });
     return numberOfMenu.reduce((total, amount) => total + amount);
   }
+
+  calcBenefitAmount() {
+    console.log(this.#userEvent);
+  }
 }
 
 export default PlannerUtils;

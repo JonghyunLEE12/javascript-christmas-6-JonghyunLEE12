@@ -4,8 +4,9 @@ export const STATUS_MSG = {
     `12월 ${date}일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n`,
   orderMenu: '<주문 메뉴>',
   totalAmount: '\n<할인 전 총주문 금액>',
-  giftMenu: `\n<증정 메뉴>`,
-  userBenefit: `\n<혜택 내역>`,
+  giftMenu: '\n<증정 메뉴>',
+  userBenefit: '\n<혜택 내역>',
+  totalBenefit: '\n<총혜택 금액>',
 };
 
 export const EVENT = {
@@ -45,5 +46,8 @@ export const OUTPUT_MSG = {
       benefitEvent: `${EVENT.benefitEvent} -${event[1].toLocaleString()}원`,
     };
     return eventMessage[event[0]];
+  },
+  totalBenefit: (total) => {
+    return total === 0 ? '0원' : `-${total.toLocaleString()}원`;
   },
 };

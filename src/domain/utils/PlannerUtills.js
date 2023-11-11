@@ -99,7 +99,10 @@ class PlannerUtils {
   }
 
   calcBenefitAmount() {
-    console.log(this.#userEvent);
+    const totalBenefit = Object.values(this.#userEvent).reduce(
+      (total, amount) => total + amount,
+    );
+    return totalBenefit;
   }
 }
 

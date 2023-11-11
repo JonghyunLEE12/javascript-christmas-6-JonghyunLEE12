@@ -37,6 +37,10 @@ const OutputView = {
       Console.print(OUTPUT_MSG.userBenefit(event));
     });
   },
+
+  printTotalBenefit(total) {
+    Console.print(OUTPUT_MSG.totalBenefit(total));
+  },
 };
 
 export default OutputView;

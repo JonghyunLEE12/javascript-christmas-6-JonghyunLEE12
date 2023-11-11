@@ -38,7 +38,7 @@ class PlannerUtils {
     EVENT_CONST.weekDay = this.#weekDaysCheck();
     EVENT_CONST.weekendDay = this.#weekendDayCheck();
     EVENT_CONST.specialDay = this.#specialDayCheck();
-    console.log(EVENT_CONST);
+    EVENT_CONST.benefitEvent = this.#benefitCheck();
     return EVENT_CONST;
   }
 
@@ -70,6 +70,13 @@ class PlannerUtils {
     }
     if (DAY_OF_WEEK.specialDay.includes(Number(this.#userDate))) {
       return 1000;
+    }
+    return 0;
+  }
+
+  #benefitCheck() {
+    if (this.getTotalAmount() > 120000) {
+      return 25000;
     }
     return 0;
   }

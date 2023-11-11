@@ -2,7 +2,7 @@ export const EVENT_CONST = {
   christmas: 0,
   weekDay: 0,
   weekendDay: 0,
-  speacialDay: 0,
+  specialDay: 0,
   benefitEvent: 0,
 };
 

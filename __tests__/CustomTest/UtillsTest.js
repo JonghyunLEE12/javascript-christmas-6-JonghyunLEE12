@@ -24,7 +24,7 @@ describe('유틸 테스트', () => {
     christmas: 3400,
     weekDay: 4046,
     weekendDay: 0,
-    speacialDay: 1000,
+    specialDay: 1000,
     benefitEvent: 2500,
   };
 

@@ -51,25 +51,22 @@ class PlannerController {
 
   #totalOrderAmount() {
     OutputView.printStatusMsg(STATUS_MSG.totalAmount);
-    const plannerUtils = new PlannerUtils(this.PLANNER_DATA.getUserOrder());
-    plannerUtils.getTotalAmount();
-    this.PLANNER_DATA.updateTotalAmount(plannerUtils.getTotalAmount());
-    OutputView.printTotalAmount(this.PLANNER_DATA.getTotalAmount());
-    this.#giftCheck();
-  }
-
-  #giftCheck() {
-    OutputView.printStatusMsg(STATUS_MSG.giftMenu);
-    OutputView.printGift(this.PLANNER_DATA.getTotalAmount());
-    this.#benefitCheck();
-  }
-
-  #benefitCheck() {
-    OutputView.printStatusMsg(STATUS_MSG.userBenefit);
     const plannerUtils = new PlannerUtils(
       this.PLANNER_DATA.getUserOrder(),
       this.PLANNER_DATA.getDate(),
     );
+    OutputView.printTotalAmount(plannerUtils.getTotalAmount());
+    this.#giftCheck(plannerUtils);
+  }
+
+  #giftCheck(plannerUtils) {
+    OutputView.printStatusMsg(STATUS_MSG.giftMenu);
+    OutputView.printGift(plannerUtils.getTotalAmount());
+    this.#benefitCheck(plannerUtils);
+  }
+
+  #benefitCheck(plannerUtils) {
+    OutputView.printStatusMsg(STATUS_MSG.userBenefit);
     this.#showBenefits(plannerUtils.benefitCheck(), plannerUtils);
   }
 

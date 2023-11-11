@@ -81,6 +81,12 @@ class PlannerController {
   #showTotalBenefit(plannerUtils) {
     OutputView.printStatusMsg(STATUS_MSG.totalBenefit);
     OutputView.printTotalBenefit(plannerUtils.calcBenefitAmount());
+    this.#showPayment(plannerUtils);
+  }
+
+  #showPayment(plannerUtils) {
+    OutputView.printStatusMsg(STATUS_MSG.payment);
+    OutputView.printPayment(plannerUtils.calcTotalPayment());
   }
 }
 

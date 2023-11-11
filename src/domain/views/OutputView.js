@@ -41,6 +41,10 @@ const OutputView = {
   printTotalBenefit(total) {
     Console.print(OUTPUT_MSG.totalBenefit(total));
   },
+
+  printPayment(payment) {
+    Console.print(OUTPUT_MSG.userPayment(payment));
+  },
 };
 
 export default OutputView;

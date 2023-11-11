@@ -58,7 +58,28 @@ describe('유틸 테스트', () => {
     test(`총 금액 테스트 : ${testCase.date}일`, async () => {
       const plannerUtil = new PlannerUtils(testCase.menu, testCase.date);
       plannerUtil.benefitCheck();
+      plannerUtil.calcBenefitAmount();
       await expect(plannerUtil.calcBenefitAmount()).toBe(expected);
+    });
+  });
+});
+
+describe('유틸 테스트', () => {
+  const testCases = [
+    {
+      menu: ['티본스테이크-5', '초코케이크-2'],
+      date: '25',
+    },
+  ];
+
+  testCases.forEach((testCase) => {
+    test(`총 금액 테스트 : ${testCase.date}일`, async () => {
+      const plannerUtil = new PlannerUtils(testCase.menu, testCase.date);
+      plannerUtil.benefitCheck();
+      plannerUtil.calcBenefitAmount();
+      // eslint-disable-next-line prettier/prettier
+      const expected = plannerUtil.getTotalAmount() - plannerUtil.calcBenefitAmount();
+      await expect(plannerUtil.calcTotalPayment()).toBe(expected);
     });
   });
 });

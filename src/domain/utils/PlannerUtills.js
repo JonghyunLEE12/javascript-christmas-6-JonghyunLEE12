@@ -104,6 +104,10 @@ class PlannerUtils {
     );
     return totalBenefit;
   }
+
+  calcTotalPayment() {
+    return this.getTotalAmount() - this.calcBenefitAmount();
+  }
 }
 
 export default PlannerUtils;

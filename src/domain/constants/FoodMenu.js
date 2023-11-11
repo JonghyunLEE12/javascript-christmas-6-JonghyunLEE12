@@ -23,7 +23,7 @@ export const FOOD_MENU = {
     stake: ['티본스테이크', 55000],
     barbeque: ['바비큐립', 54000],
     seafood: ['해산물파스타', 35000],
-    christmas: ['크리스마스파스타', 2500],
+    christmas: ['크리스마스파스타', 25000],
   },
   dessert: {
     cake: ['초코케이크', 15000],

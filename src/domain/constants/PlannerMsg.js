@@ -7,6 +7,7 @@ export const STATUS_MSG = {
   giftMenu: '\n<증정 메뉴>',
   userBenefit: '\n<혜택 내역>',
   totalBenefit: '\n<총혜택 금액>',
+  payment: '\n<할인 후 예상 결제 금액>',
 };
 
 export const EVENT = {
@@ -50,4 +51,6 @@ export const OUTPUT_MSG = {
   totalBenefit: (total) => {
     return total === 0 ? '0원' : `-${total.toLocaleString()}원`;
   },
+
+  userPayment: (payment) => `${payment.toLocaleString()}원`,
 };

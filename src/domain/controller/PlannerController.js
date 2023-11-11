@@ -87,6 +87,12 @@ class PlannerController {
   #showPayment(plannerUtils) {
     OutputView.printStatusMsg(STATUS_MSG.payment);
     OutputView.printPayment(plannerUtils.calcTotalPayment());
+    this.#userEventBadge(plannerUtils);
+  }
+
+  #userEventBadge(plannerUtils) {
+    OutputView.printStatusMsg(STATUS_MSG.eventBadge);
+    OutputView.printEventBadge(plannerUtils.calcBenefitAmount());
   }
 }
 

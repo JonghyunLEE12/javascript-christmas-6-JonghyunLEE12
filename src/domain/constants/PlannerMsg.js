@@ -8,6 +8,7 @@ export const STATUS_MSG = {
   userBenefit: '\n<혜택 내역>',
   totalBenefit: '\n<총혜택 금액>',
   payment: '\n<할인 후 예상 결제 금액>',
+  eventBadge: '\n<12월 이벤트 배지>',
 };
 
 export const EVENT = {
@@ -53,4 +54,16 @@ export const OUTPUT_MSG = {
   },
 
   userPayment: (payment) => `${payment.toLocaleString()}원`,
+  userBadge: (amount) => {
+    if (amount < 5000) {
+      return '없음';
+    }
+    if (amount >= 5000 && amount < 10000) {
+      return '별';
+    }
+    if (amount >= 10000 && amount < 20000) {
+      return '트리';
+    }
+    return '산타';
+  },
 };

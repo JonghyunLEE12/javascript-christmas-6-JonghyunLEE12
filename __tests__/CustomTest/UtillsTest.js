@@ -12,7 +12,6 @@ describe('유틸 테스트', () => {
 
   testCases.forEach((testCase) => {
     test(`총 금액 테스트 : ${testCase.data}`, async () => {
-      //
       const plannerUtil = new PlannerUtils(testCase.data);
       await expect(plannerUtil.getTotalAmount()).toBe(testCase.expected);
     });
@@ -45,8 +44,6 @@ describe('유틸 테스트', () => {
 });
 
 describe('유틸 테스트', () => {
-  const expected = 3400 + 4046 + 1000 + 25000;
-
   const testCases = [
     {
       menu: ['티본스테이크-5', '초코케이크-2'],
@@ -55,10 +52,10 @@ describe('유틸 테스트', () => {
   ];
 
   testCases.forEach((testCase) => {
-    test(`총 금액 테스트 : ${testCase.date}일`, async () => {
+    test(`총 혜택금액 테스트 : ${testCase.date}일`, async () => {
       const plannerUtil = new PlannerUtils(testCase.menu, testCase.date);
+      const expected = 3400 + 4046 + 1000 + 25000;
       plannerUtil.benefitCheck();
-      plannerUtil.calcBenefitAmount();
       await expect(plannerUtil.calcBenefitAmount()).toBe(expected);
     });
   });
@@ -73,12 +70,11 @@ describe('유틸 테스트', () => {
   ];
 
   testCases.forEach((testCase) => {
-    test(`총 금액 테스트 : ${testCase.date}일`, async () => {
+    test(`할인 후 예상 결제 금액 : ${testCase.date}일`, async () => {
       const plannerUtil = new PlannerUtils(testCase.menu, testCase.date);
+      const discount = 3400 + 4046 + 1000;
       plannerUtil.benefitCheck();
-      plannerUtil.calcBenefitAmount();
-      // eslint-disable-next-line prettier/prettier
-      const expected = plannerUtil.getTotalAmount() - plannerUtil.calcBenefitAmount();
+      const expected = plannerUtil.getTotalAmount() - discount;
       await expect(plannerUtil.calcTotalPayment()).toBe(expected);
     });
   });

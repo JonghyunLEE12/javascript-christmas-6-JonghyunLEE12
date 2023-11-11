@@ -45,6 +45,10 @@ const OutputView = {
   printPayment(payment) {
     Console.print(OUTPUT_MSG.userPayment(payment));
   },
+
+  printEventBadge(amount) {
+    Console.print(OUTPUT_MSG.userBadge(amount));
+  },
 };
 
 export default OutputView;

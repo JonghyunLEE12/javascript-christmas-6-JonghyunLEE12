@@ -106,6 +106,9 @@ class PlannerUtils {
   }
 
   calcTotalPayment() {
+    if (this.#userEvent.benefitEvent !== 0) {
+      return this.getTotalAmount() - this.calcBenefitAmount() + 25000;
+    }
     return this.getTotalAmount() - this.calcBenefitAmount();
   }
 }

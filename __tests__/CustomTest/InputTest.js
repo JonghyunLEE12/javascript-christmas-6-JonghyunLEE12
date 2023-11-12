@@ -5,7 +5,10 @@ describe('날짜 테스트', () => {
   const userInput = new InputValidator();
   const testCases = [
     { date: 'a', expectedError: '[ERROR]' },
+    { date: '이십오일', expectedError: '[ERROR]' },
     { date: 32, expectedError: '[ERROR]' },
+    { date: 0, expectedError: '[ERROR]' },
+    { date: 25.5, expectedError: '[ERROR]' },
   ];
 
   testCases.forEach((testCase) => {

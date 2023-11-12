@@ -72,7 +72,7 @@ class PlannerUtils {
     if (DAY_OF_WEEK.specialDay.includes(this.#userDay)) {
       return 1000;
     }
-    if (DAY_OF_WEEK.specialDay.includes(Number(this.#userDate))) {
+    if (DAY_OF_WEEK.specialDay.includes(this.#userDate)) {
       return 1000;
     }
     return 0;

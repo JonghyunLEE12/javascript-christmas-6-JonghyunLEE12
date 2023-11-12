@@ -31,7 +31,7 @@ export const ERROR_MSG = {
   notInMenu: '[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.',
   drinkError: '[ERROR] 음료만 주문할 수 없습니다. 다시 입력해 주세요.',
   totalError:
-    '[ERROR] 음식은 최대 20개 까지만 주문 가능합니다. 다시 입력해주세요',
+    '[ERROR] 음식은 최대 20개 까지만 주문 가능합니다. 다시 입력해주세요.',
 };
 
 export const OUTPUT_MSG = {

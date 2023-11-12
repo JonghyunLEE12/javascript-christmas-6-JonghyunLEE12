@@ -10,7 +10,7 @@ class PlannerUtils {
 
   #userEvent;
 
-  constructor(userOrder = [], userDate = 0) {
+  constructor(userOrder, userDate) {
     this.#userOrder = userOrder;
     this.#userDate = userDate;
     this.#userDay = new Date(`2023-12-${this.#userDate}`).getDay();

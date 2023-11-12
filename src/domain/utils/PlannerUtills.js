@@ -30,8 +30,7 @@ class PlannerUtils {
   #sumAmount(MENU_COST) {
     const totalAmount = [];
     this.#userOrder.forEach((order) => {
-      const [menu, cost] = order.split('-');
-      totalAmount.push(MENU_COST[menu] * Number(cost));
+      totalAmount.push(MENU_COST[order[0]] * Number(order[1]));
     });
     return totalAmount.reduce((total, cost) => total + cost);
   }
@@ -88,9 +87,8 @@ class PlannerUtils {
 
   #checkEventMenu(event) {
     const numberOfMenu = [0];
-    const userMenu = this.#userOrder.map((order) => order.split('-'));
     const eventMenu = Object.values(FOOD_MENU[event]).map((menu) => menu[0]);
-    userMenu.forEach((menu) => {
+    this.#userOrder.forEach((menu) => {
       if (eventMenu.includes(menu[0])) {
         numberOfMenu.push(Number(menu[1]));
       }

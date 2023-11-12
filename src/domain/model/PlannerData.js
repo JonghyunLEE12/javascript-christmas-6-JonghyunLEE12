@@ -13,7 +13,7 @@ class PlannerData {
   }
 
   getDate() {
-    return this.#date;
+    return Number(this.#date);
   }
 
   updateFood(inputOrder) {
@@ -21,7 +21,7 @@ class PlannerData {
   }
 
   getUserOrder() {
-    return this.#userOrder;
+    return this.#userOrder.map((order) => order.split('-'));
   }
 }
 

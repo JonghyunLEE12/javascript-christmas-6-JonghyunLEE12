@@ -11,10 +11,6 @@ const OutputView = {
   },
 
   printOrderMenu(userOrder) {
-    // const orderList = userOrder.map((order) => order.split('-'));
-    // orderList.forEach((order) => {
-    //   Console.print(OUTPUT_MSG.userOrder(order));
-    // });
     userOrder.forEach((order) => {
       Console.print(OUTPUT_MSG.userOrder(order));
     });

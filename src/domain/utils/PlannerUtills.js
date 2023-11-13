@@ -1,5 +1,9 @@
 import { FOOD_MENU } from '../constants/FoodMenu.js';
-import { EVENT_CONST, DAY_OF_WEEK } from '../constants/Constants.js';
+import {
+  EVENT_CONST,
+  DAY_OF_WEEK,
+  UTILS_CONST,
+} from '../constants/Constants.js';
 
 class PlannerUtils {
   #userOrder;
@@ -13,7 +17,7 @@ class PlannerUtils {
   constructor(userOrder, userDate) {
     this.#userOrder = userOrder;
     this.#userDate = userDate;
-    this.#userDay = new Date(`2023-12-${this.#userDate}`).getDay();
+    this.#userDay = new Date(UTILS_CONST.userDay(this.#userDate)).getDay();
     this.#userEvent = { ...EVENT_CONST };
   }
 
@@ -36,53 +40,56 @@ class PlannerUtils {
   }
 
   benefitCheck() {
-    if (this.getTotalAmount() >= 10000) {
+    if (this.getTotalAmount() >= UTILS_CONST.minGetBenefit) {
       this.#userEvent.christmas = this.#christmasCheck();
       this.#userEvent.weekDay = this.#weekDaysCheck();
       this.#userEvent.weekendDay = this.#weekendDayCheck();
       this.#userEvent.specialDay = this.#specialDayCheck();
-      this.#userEvent.benefitEvent = this.#benefitCheck();
+      this.#userEvent.benefitEvent = this.#giftCheck();
     }
     return this.#userEvent;
   }
 
   #christmasCheck() {
-    if (this.#userDate > 25) {
-      return 0;
+    if (this.#userDate > UTILS_CONST.christmasEventEnd) {
+      return UTILS_CONST.noBenefit;
     }
-    const benefit = 1000 + (this.#userDate - 1) * 100;
-    return benefit;
+    return UTILS_CONST.christmasBenefit(this.#userDate);
   }
 
   #weekDaysCheck() {
     if (DAY_OF_WEEK.weekDay.includes(this.#userDay)) {
-      return this.#checkEventMenu('dessert') * 2023;
+      return (
+        this.#checkEventMenu(UTILS_CONST.weekDayEvent) * UTILS_CONST.discount
+      );
     }
-    return 0;
+    return UTILS_CONST.noBenefit;
   }
 
   #weekendDayCheck() {
     if (DAY_OF_WEEK.weekendDay.includes(this.#userDay)) {
-      return this.#checkEventMenu('main') * 2023;
+      return (
+        this.#checkEventMenu(UTILS_CONST.weekendEvent) * UTILS_CONST.discount
+      );
     }
-    return 0;
+    return UTILS_CONST.noBenefit;
   }
 
   #specialDayCheck() {
     if (DAY_OF_WEEK.specialDay.includes(this.#userDay)) {
-      return 1000;
+      return UTILS_CONST.specialDiscount;
     }
     if (DAY_OF_WEEK.specialDay.includes(this.#userDate)) {
-      return 1000;
+      return UTILS_CONST.specialDiscount;
     }
-    return 0;
+    return UTILS_CONST.noBenefit;
   }
 
-  #benefitCheck() {
-    if (this.getTotalAmount() > 120000) {
-      return 25000;
+  #giftCheck() {
+    if (this.getTotalAmount() > UTILS_CONST.minGetGift) {
+      return UTILS_CONST.giftCost;
     }
-    return 0;
+    return UTILS_CONST.noBenefit;
   }
 
   #checkEventMenu(event) {
@@ -105,7 +112,9 @@ class PlannerUtils {
 
   calcTotalPayment() {
     if (this.#userEvent.benefitEvent !== 0) {
-      return this.getTotalAmount() - this.calcBenefitAmount() + 25000;
+      return (
+        this.getTotalAmount() - this.calcBenefitAmount() + UTILS_CONST.giftCost
+      );
     }
     return this.getTotalAmount() - this.calcBenefitAmount();
   }

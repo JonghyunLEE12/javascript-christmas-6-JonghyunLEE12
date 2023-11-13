@@ -17,13 +17,13 @@ class DateValidate {
   }
 
   safeCheck() {
-    if (!Number.isSafeInteger(this.#date)) {
+    if (!Number.isSafeInteger(Number(this.#date))) {
       throw new Error(ERROR_MSG.dateError);
     }
   }
 
   rangeCheck() {
-    if (this.#date <= 0 || this.#date > 31) {
+    if (Number(this.#date) <= 0 || Number(this.#date) > 31) {
       throw new Error(ERROR_MSG.dateError);
     }
   }

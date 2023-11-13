@@ -5,10 +5,12 @@ describe('날짜 테스트', () => {
   const userInput = new InputValidator();
   const testCases = [
     { date: 'a', expectedError: '[ERROR]' },
+    { date: ' ', expectedError: '[ERROR]' },
     { date: '이십오일', expectedError: '[ERROR]' },
-    { date: 32, expectedError: '[ERROR]' },
-    { date: 0, expectedError: '[ERROR]' },
-    { date: 25.5, expectedError: '[ERROR]' },
+    { date: '32', expectedError: '[ERROR]' },
+    { date: '0', expectedError: '[ERROR]' },
+    { date: '25.5', expectedError: '[ERROR]' },
+    { date: '-1', expectedError: '[ERROR]' },
   ];
 
   testCases.forEach((testCase) => {
@@ -34,6 +36,7 @@ describe('메뉴 테스트', () => {
     { menu: ['해산물파스타-2', '해산물파스타-1'], expectedError: '[ERROR]' },
     { menu: ['제로콜라-1'], expectedError: '[ERROR]' },
     { menu: ['레드와인-1', '제로콜라-1'], expectedError: '[ERROR]' },
+    { menu: ['시저샐러드- 1', '제로콜라- 1'], expectedError: '[ERROR]' },
     {
       menu: ['레드와인-2', '제로콜라-2', '샴페인-2'],
       expectedError: '[ERROR]',

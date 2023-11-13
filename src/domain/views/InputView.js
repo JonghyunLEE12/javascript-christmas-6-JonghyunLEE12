@@ -7,7 +7,7 @@ const InputView = {
 
   async readDate() {
     const userDate = await Console.readLineAsync(INPUT_MSG.inputVisitDay);
-    await this.INPUT_VAL.dateValidate(Number(userDate));
+    await this.INPUT_VAL.dateValidate(userDate);
     return userDate;
   },
 

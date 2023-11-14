@@ -360,7 +360,7 @@ export default DateValidate;
 
 
 
-#### :two: 테스트를 먼저 작성하는게 나을까?, 기능 구현 후 테스트를 작성하는게 나을까?
+#### :three: 테스트를 먼저 작성하는게 나을까?, 기능 구현 후 테스트를 작성하는게 나을까?
 
 작은 단위의 로직을 부터 테스트를 해 나가던 중, 테스트를 기능 구현 전,후 언제 작성하는것이 좋을까에 대한
 
@@ -386,7 +386,7 @@ export default DateValidate;
 
 
 
-#### :three:  총 주문 금액을 구하는 로직에서 시간이 너무 오래걸린다.
+#### :four: 총 주문 금액을 구하는 로직에서 시간이 너무 오래걸린다.
 
 
 
@@ -515,7 +515,7 @@ getTotalAmount() {
 
 
 
-#### :four:  주말,평일 이벤트 확인 로직 리팩토링
+#### :five:  주말,평일 이벤트 확인 로직 리팩토링
 
 현재 `주말에는 메인 메뉴 개수 당 2023원 할인, 평일에는 디저트메뉴 개당 2023할인` 을 확인 하는 
 
@@ -589,7 +589,7 @@ getTotalAmount() {
 
 
 
-#### :five:  총 혜택 금액 과 할인 후 예상 결제 금액
+#### :six:  총 혜택 금액 과 할인 후 예상 결제 금액
 
 요구사항에선
 
@@ -632,7 +632,7 @@ this.#userEvent.benefitEvent 는 사용자의 금액에서 증정 금액이 포�
 
 
 
-#### :six: PlannerUtils 호출 와 PlannerData.js 리팩토링
+#### :seven: PlannerUtils 호출 와 PlannerData.js 리팩토링
 
 현재 PlannerData.js 는 날짜, 주문, 총 주문 금액 등 3개의 필드를 가지고 있다.
 
@@ -759,7 +759,7 @@ export default PlannerData;
 
 
 
-#### :seven: PlannerData.js 리팩토링
+#### :eight: PlannerData.js 리팩토링
 
 현재 PlannerDate.js 는 사용자 입력값과 주문을 담고 있는 변수 이다
 
@@ -815,7 +815,7 @@ this.#userOrder.forEach((menu) => {
 
 
 
-#### :eight: '12' 와  ' 12' Validator
+#### :nine: '12' 와  ' 12' Validator
 
 현재의 입력에서는 '12', ' 12' 두개의 날짜 입력에 대해 동일한 처리를 해준다.
 

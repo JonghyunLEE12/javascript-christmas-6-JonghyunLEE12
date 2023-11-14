@@ -13,7 +13,7 @@ describe('유틸 테스트', () => {
   ];
 
   testCases.forEach((testCase) => {
-    test(`총 금액 테스트 : ${testCase.menu}`, async () => {
+    test(`총 금액 테스트 : ${testCase.menu}`, () => {
       const PLANNER_DATA = new PlannerData();
       PLANNER_DATA.updateDate(testCase.day);
       PLANNER_DATA.updateFood(testCase.menu);
@@ -21,7 +21,7 @@ describe('유틸 테스트', () => {
         PLANNER_DATA.getUserOrder(),
         PLANNER_DATA.getDate(),
       );
-      await expect(plannerUtil.getTotalAmount()).toBe(testCase.expected);
+      expect(plannerUtil.getTotalAmount()).toBe(testCase.expected);
     });
   });
 });
@@ -44,7 +44,7 @@ describe('유틸 테스트', () => {
   ];
 
   testCases.forEach((testCase) => {
-    test(`혜택 테스트 : ${testCase.menu}`, async () => {
+    test(`혜택 테스트 : ${testCase.menu}`, () => {
       const PLANNER_DATA = new PlannerData();
       PLANNER_DATA.updateDate(testCase.day);
       PLANNER_DATA.updateFood(testCase.menu);
@@ -52,7 +52,7 @@ describe('유틸 테스트', () => {
         PLANNER_DATA.getUserOrder(),
         PLANNER_DATA.getDate(),
       );
-      await expect(plannerUtil.benefitCheck()).toStrictEqual(testCase.expected);
+      expect(plannerUtil.benefitCheck()).toStrictEqual(testCase.expected);
     });
   });
 });
@@ -72,7 +72,7 @@ describe('유틸 테스트', () => {
   ];
 
   testCases.forEach((testCase) => {
-    test(`총 혜택금액 테스트 : ${testCase.day}일`, async () => {
+    test(`총 혜택금액 테스트 : ${testCase.day}일`, () => {
       const PLANNER_DATA = new PlannerData();
       PLANNER_DATA.updateDate(testCase.day);
       PLANNER_DATA.updateFood(testCase.menu);
@@ -81,7 +81,7 @@ describe('유틸 테스트', () => {
         PLANNER_DATA.getDate(),
       );
       plannerUtil.benefitCheck();
-      await expect(plannerUtil.calcBenefitAmount()).toBe(testCase.expected);
+      expect(plannerUtil.calcBenefitAmount()).toBe(testCase.expected);
     });
   });
 });
@@ -106,7 +106,7 @@ describe('유틸 테스트', () => {
   ];
 
   testCases.forEach((testCase) => {
-    test(`할인 후 예상 결제 금액 : ${testCase.day}일`, async () => {
+    test(`할인 후 예상 결제 금액 : ${testCase.day}일`, () => {
       const PLANNER_DATA = new PlannerData();
       PLANNER_DATA.updateDate(testCase.day);
       PLANNER_DATA.updateFood(testCase.menu);
@@ -116,7 +116,7 @@ describe('유틸 테스트', () => {
       );
       plannerUtil.benefitCheck();
       const expected = plannerUtil.getTotalAmount() - testCase.discount;
-      await expect(plannerUtil.calcTotalPayment()).toBe(expected);
+      expect(plannerUtil.calcTotalPayment()).toBe(expected);
     });
   });
 });

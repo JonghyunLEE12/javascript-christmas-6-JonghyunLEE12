@@ -103,6 +103,16 @@ describe('유틸 테스트', () => {
       day: '12',
       discount: 2100 + 2023,
     },
+    {
+      menu: ['크리스마스파스타-1', '레드와인-1', '초코케이크-1'],
+      day: '26',
+      discount: 2023,
+    },
+    {
+      menu: ['크리스마스파스타-1', '레드와인-1'],
+      day: '26',
+      discount: 0,
+    },
   ];
 
   testCases.forEach((testCase) => {

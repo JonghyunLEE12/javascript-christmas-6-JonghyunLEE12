@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1700043600484" clover="3.2.0">
+  <project timestamp="1700043600484" name="All files">
+    <metrics statements="214" coveredstatements="213" conditionals="68" coveredconditionals="67" methods="69" coveredmethods="69" elements="351" coveredelements="349" complexity="0" loc="214" ncloc="214" packages="7" files="12" classes="12"/>
+    <package name="src">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="App.js" path="/Users/ijonghyeon/Desktop/Desktop/woowa/javascript-christmas-6-JonghyunLEE12/src/App.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.domain.constants">
+      <metrics statements="26" coveredstatements="26" conditionals="14" coveredconditionals="14" methods="10" coveredmethods="10"/>
+      <file name="Constants.js" path="/Users/ijonghyeon/Desktop/Desktop/woowa/javascript-christmas-6-JonghyunLEE12/src/domain/constants/Constants.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="12" type="stmt"/>
+        <line num="24" count="9" type="stmt"/>
+      </file>
+      <file name="FoodMenu.js" path="/Users/ijonghyeon/Desktop/Desktop/woowa/javascript-christmas-6-JonghyunLEE12/src/domain/constants/FoodMenu.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="16" count="3" type="stmt"/>
+      </file>
+      <file name="PlannerMsg.js" path="/Users/ijonghyeon/Desktop/Desktop/woowa/javascript-christmas-6-JonghyunLEE12/src/domain/constants/PlannerMsg.js">
+        <metrics statements="20" coveredstatements="20" conditionals="14" coveredconditionals="14" methods="8" coveredmethods="8"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="38" count="8" type="stmt"/>
+        <line num="39" count="4" type="stmt"/>
+        <line num="40" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="8" type="stmt"/>
+        <line num="50" count="8" type="stmt"/>
+        <line num="53" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="56" count="4" type="stmt"/>
+        <line num="58" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="59" count="4" type="stmt"/>
+        <line num="61" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="62" count="3" type="stmt"/>
+        <line num="64" count="5" type="cond" truecount="4" falsecount="0"/>
+        <line num="65" count="2" type="stmt"/>
+        <line num="67" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.domain.controller">
+      <metrics statements="39" coveredstatements="39" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="PlannerController.js" path="/Users/ijonghyeon/Desktop/Desktop/woowa/javascript-christmas-6-JonghyunLEE12/src/domain/controller/PlannerController.js">
+        <metrics statements="39" coveredstatements="39" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="30" count="5" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
+        <line num="47" count="4" type="stmt"/>
+        <line num="48" count="4" type="stmt"/>
+        <line num="49" count="4" type="stmt"/>
+        <line num="53" count="4" type="stmt"/>
+        <line num="54" count="4" type="stmt"/>
+        <line num="58" count="4" type="stmt"/>
+        <line num="59" count="4" type="stmt"/>
+        <line num="63" count="4" type="stmt"/>
+        <line num="64" count="4" type="stmt"/>
+        <line num="65" count="4" type="stmt"/>
+        <line num="69" count="4" type="stmt"/>
+        <line num="70" count="4" type="stmt"/>
+        <line num="74" count="4" type="stmt"/>
+        <line num="75" count="4" type="stmt"/>
+        <line num="79" count="4" type="stmt"/>
+        <line num="80" count="4" type="stmt"/>
+        <line num="81" count="4" type="stmt"/>
+        <line num="85" count="4" type="stmt"/>
+        <line num="86" count="4" type="stmt"/>
+        <line num="87" count="4" type="stmt"/>
+        <line num="91" count="4" type="stmt"/>
+        <line num="92" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.domain.model">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+      <file name="PlannerData.js" path="/Users/ijonghyeon/Desktop/Desktop/woowa/javascript-christmas-6-JonghyunLEE12/src/domain/model/PlannerData.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="16" count="16" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="24" count="33" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.domain.utils">
+      <metrics statements="60" coveredstatements="59" conditionals="18" coveredconditionals="17" methods="16" coveredmethods="16"/>
+      <file name="InputValidator.js" path="/Users/ijonghyeon/Desktop/Desktop/woowa/javascript-christmas-6-JonghyunLEE12/src/domain/utils/InputValidator.js">
+        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="12" count="15" type="stmt"/>
+        <line num="13" count="15" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="19" count="19" type="stmt"/>
+        <line num="20" count="19" type="stmt"/>
+        <line num="21" count="16" type="stmt"/>
+        <line num="22" count="9" type="stmt"/>
+        <line num="23" count="8" type="stmt"/>
+        <line num="24" count="7" type="stmt"/>
+      </file>
+      <file name="PlannerUtills.js" path="/Users/ijonghyeon/Desktop/Desktop/woowa/javascript-christmas-6-JonghyunLEE12/src/domain/utils/PlannerUtills.js">
+        <metrics statements="49" coveredstatements="48" conditionals="18" coveredconditionals="17" methods="13" coveredmethods="13"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="25" count="39" type="stmt"/>
+        <line num="26" count="39" type="stmt"/>
+        <line num="27" count="156" type="stmt"/>
+        <line num="28" count="468" type="stmt"/>
+        <line num="31" count="39" type="stmt"/>
+        <line num="35" count="39" type="stmt"/>
+        <line num="36" count="39" type="stmt"/>
+        <line num="37" count="82" type="stmt"/>
+        <line num="39" count="43" type="stmt"/>
+        <line num="43" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="9" type="stmt"/>
+        <line num="45" count="9" type="stmt"/>
+        <line num="46" count="9" type="stmt"/>
+        <line num="47" count="9" type="stmt"/>
+        <line num="48" count="9" type="stmt"/>
+        <line num="50" count="10" type="stmt"/>
+        <line num="54" count="9" type="cond" truecount="1" falsecount="1"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="57" count="9" type="stmt"/>
+        <line num="61" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="62" count="8" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="70" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="75" count="8" type="stmt"/>
+        <line num="79" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="80" count="2" type="stmt"/>
+        <line num="82" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="83" count="3" type="stmt"/>
+        <line num="85" count="4" type="stmt"/>
+        <line num="89" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="90" count="4" type="stmt"/>
+        <line num="92" count="5" type="stmt"/>
+        <line num="96" count="9" type="stmt"/>
+        <line num="97" count="20" type="stmt"/>
+        <line num="98" count="9" type="stmt"/>
+        <line num="99" count="19" type="cond" truecount="2" falsecount="0"/>
+        <line num="100" count="10" type="stmt"/>
+        <line num="103" count="10" type="stmt"/>
+        <line num="107" count="17" type="stmt"/>
+        <line num="108" count="68" type="stmt"/>
+        <line num="110" count="17" type="stmt"/>
+        <line num="114" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="115" count="2" type="stmt"/>
+        <line num="119" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.domain.utils.validator">
+      <metrics statements="57" coveredstatements="57" conditionals="34" coveredconditionals="34" methods="19" coveredmethods="19"/>
+      <file name="DateValidate.js" path="/Users/ijonghyeon/Desktop/Desktop/woowa/javascript-christmas-6-JonghyunLEE12/src/domain/utils/validator/DateValidate.js">
+        <metrics statements="8" coveredstatements="8" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
+        <line num="9" count="15" type="stmt"/>
+        <line num="10" count="15" type="stmt"/>
+        <line num="14" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="20" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="26" count="7" type="cond" truecount="4" falsecount="0"/>
+        <line num="27" count="3" type="stmt"/>
+      </file>
+      <file name="MenuValidate.js" path="/Users/ijonghyeon/Desktop/Desktop/woowa/javascript-christmas-6-JonghyunLEE12/src/domain/utils/validator/MenuValidate.js">
+        <metrics statements="49" coveredstatements="49" conditionals="26" coveredconditionals="26" methods="15" coveredmethods="15"/>
+        <line num="12" count="19" type="stmt"/>
+        <line num="13" count="19" type="stmt"/>
+        <line num="14" count="19" type="stmt"/>
+        <line num="18" count="19" type="stmt"/>
+        <line num="19" count="19" type="stmt"/>
+        <line num="20" count="32" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="27" count="19" type="stmt"/>
+        <line num="28" count="76" type="stmt"/>
+        <line num="31" count="34" type="stmt"/>
+        <line num="35" count="76" type="stmt"/>
+        <line num="36" count="228" type="stmt"/>
+        <line num="41" count="16" type="stmt"/>
+        <line num="42" count="16" type="stmt"/>
+        <line num="43" count="27" type="stmt"/>
+        <line num="44" count="21" type="stmt"/>
+        <line num="47" count="10" type="stmt"/>
+        <line num="51" count="27" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="4" type="stmt"/>
+        <line num="54" count="23" type="cond" truecount="2" falsecount="0"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="58" count="22" type="cond" truecount="2" falsecount="0"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="64" count="11" type="stmt"/>
+        <line num="65" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="71" count="9" type="stmt"/>
+        <line num="72" count="17" type="stmt"/>
+        <line num="76" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="82" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="88" count="7" type="stmt"/>
+        <line num="89" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="90" count="3" type="stmt"/>
+        <line num="95" count="7" type="stmt"/>
+        <line num="96" count="7" type="stmt"/>
+        <line num="97" count="28" type="stmt"/>
+        <line num="99" count="7" type="stmt"/>
+        <line num="103" count="28" type="stmt"/>
+        <line num="104" count="28" type="stmt"/>
+        <line num="105" count="84" type="cond" truecount="2" falsecount="0"/>
+        <line num="106" count="14" type="stmt"/>
+        <line num="109" count="28" type="stmt"/>
+        <line num="113" count="84" type="stmt"/>
+        <line num="117" count="7" type="stmt"/>
+        <line num="118" count="7" type="cond" truecount="6" falsecount="0"/>
+        <line num="119" count="3" type="stmt"/>
+        <line num="121" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.domain.views">
+      <metrics statements="24" coveredstatements="24" conditionals="2" coveredconditionals="2" methods="14" coveredmethods="14"/>
+      <file name="InputView.js" path="/Users/ijonghyeon/Desktop/Desktop/woowa/javascript-christmas-6-JonghyunLEE12/src/domain/views/InputView.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+      </file>
+      <file name="OutputView.js" path="/Users/ijonghyeon/Desktop/Desktop/woowa/javascript-christmas-6-JonghyunLEE12/src/domain/views/OutputView.js">
+        <metrics statements="17" coveredstatements="17" conditionals="2" coveredconditionals="2" methods="12" coveredmethods="12"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="36" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="29" count="20" type="stmt"/>
+        <line num="31" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="8" type="stmt"/>
+        <line num="41" count="4" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="49" count="4" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

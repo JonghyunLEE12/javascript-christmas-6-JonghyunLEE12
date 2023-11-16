@@ -14,6 +14,7 @@ describe('날짜 테스트', () => {
     { date: ' 12', expectedError: '[ERROR]' },
     { date: '1 2', expectedError: '[ERROR]' },
     { date: '12  ', expectedError: '[ERROR]' },
+    { date: '  12  ', expectedError: '[ERROR]' },
   ];
 
   testCases.forEach((testCase) => {

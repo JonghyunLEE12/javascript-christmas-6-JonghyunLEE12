@@ -1,3 +1,4 @@
+// 코드리뷰
 import { FOOD_MENU } from '../constants/FoodMenu.js';
 import {
   EVENT_CONST,

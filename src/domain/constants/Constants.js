@@ -1,3 +1,4 @@
+// 코드리뷰
 export const EVENT_CONST = {
   christmas: 0,
   weekDay: 0,

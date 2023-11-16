@@ -1,3 +1,4 @@
+// 코드리뷰
 import { ERROR_MSG } from '../../constants/PlannerMsg.js';
 import { FOOD_MENU } from '../../constants/FoodMenu.js';
 
